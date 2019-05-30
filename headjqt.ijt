@@ -29,7 +29,7 @@ _______________________________________
 NB.labchapter:Action of {. on Non-Empty arrays
 
 NB.labprepare:
-require jpath '~addons/media/videolabjqt.ijs'
+require jpath '~addons/media_videolabs/videolabjqt.ijs'
 init_qtvideo_ ''  NB. initialize according to screensize
 display_qtvideo_ '3lZde3JFynQ'
 NB.labprepare:
