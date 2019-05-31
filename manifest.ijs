@@ -5,6 +5,6 @@ headjhs.ijt
 headjqt.ijt
 videolabjqt.ijs
 )
-
+VERSION=:1.0.1
 RELEASE=: '807'
 FOLDER=: 'media/videolabs'
