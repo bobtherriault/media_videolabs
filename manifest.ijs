@@ -6,6 +6,6 @@ headjqt.ijt
 videolabjqt.ijs
 )
 
-VERSION=: '1.0.1'
+VERSION=: '1.0.2'
 RELEASE=: 'j901'
 FOLDER=: 'media/videolabs'
