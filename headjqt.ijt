@@ -31,7 +31,7 @@ NB.labchapter:Action of {. on Non-Empty arrays
 NB.labprepare:
 require jpath '~addons/media/videolabs/videolabjqt.ijs'
 init_qtvideo_ ''  NB. initialize according to screensize
-display_qtvideo_ '3lZde3JFynQ'
+display_qtvideo_ 'Szo4FNzsXa0'
 NB.labprepare:
 
 NB.Click here and advance lab to continue
