@@ -182,22 +182,14 @@ NB.labchapter:References
 0 : 0
 _______________________________________
 
- Nuvoc Definition for Head found at https://code.jsoftware.com/wiki/Vocabulary/curlylfdot 
- J for C Programmers - Chapter 8 - Head found in Monads section at https://www.jsoftware.com/help/jforc/more_verbs.htm#_Toc191734357
- The J Dictionary Vocabulary Definition for Head found at https://www.jsoftware.com/help/dictionary/d521.htm
- 
- Nuvoc Definition for From found at https://code.jsoftware.com/wiki/Vocabulary/curlylf#dyadic 
- J for C Programmers - Chapter 8 - More Verbs - From found in Dyads section at https://www.jsoftware.com/help/jforc/more_verbs.htm#_Toc191734356
- The J Dictionary Vocabulary Definition for From found at https://www.jsoftware.com/help/dictionary/d520.htm
-  
- Nuvoc Definition for Take found at https://code.jsoftware.com/wiki/Vocabulary/curlylfdot#dyadic 
- J for C Programmers - Chapter 8 - More Verbs - Take found in Dyads section at https://www.jsoftware.com/help/jforc/more_verbs.htm#_Toc191734356
- The J Dictionary Vocabulary Definition for Take found at https://www.jsoftware.com/help/dictionary/d521.htm
+ Nuvoc Definition for 'Behead' Monadic Verb found at https://code.jsoftware.com/wiki/Vocabulary/curlyrtdot 
+ J for C Programmers - Chapter 8 - More Verbs - 'Behead' Monadic Verb found in Monads section at https://www.jsoftware.com/help/jforc/more_verbs.htm#_Toc191734357
+ The J Dictionary Vocabulary Definition for 'Behead' Monadic Verb found at https://www.jsoftware.com/help/dictionary/d531.htm
 
- Nuvoc Definition for Fit Conjunction found at https://code.jsoftware.com/wiki/Vocabulary/bangdot 
- J for C Programmers - Chapter 8 - Fit Conjunction found in Dyads section at https://www.jsoftware.com/help/jforc/more_verbs.htm#_Toc191734356
- The J Dictionary Vocabulary Definition for Fit Conjunction found at https://www.jsoftware.com/help/dictionary/d411.htm
- _______________________________________
+ Nuvoc Definition for 'Shape Of' Monadic Verb found at https://code.jsoftware.com/wiki/Vocabulary/dollar 
+ J for C Programmers - Chapter 5 - Declarations - 'Shape Of' Monadic Verb found at https://www.jsoftware.com/help/jforc/declarations.htm#_Toc191734328
+ The J Dictionary Vocabulary Definition for 'Shape Of' Monadic Verb found at https://www.jsoftware.com/help/dictionary/d210.htm
+_______________________________________
 )
 
 0 : 0
