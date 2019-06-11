@@ -10,6 +10,6 @@ tailjqt.ijt
 videolabjqt.ijs
 )
 
-VERSION=: '1.0.6'
+VERSION=: '1.0.7'
 RELEASE=: 'j901'
 FOLDER=: 'media/videolabs'
