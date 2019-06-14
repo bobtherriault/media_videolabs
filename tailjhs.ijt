@@ -5,12 +5,12 @@ NB.labchapter:Video Requirements
 0 : 0
 _______________________________________
 
-To run this video lab you must have 
+To run this video lab, you must have 
 access to youtube.com through the 
 internet. 
 
 If you do not, the lab will still 
-advance thorugh the exercises, but the 
+advance through the exercises, but the 
 videos will not be displayed.
 
 Videos will appear as steps in the lab,
@@ -149,7 +149,7 @@ We know that the result was an empty line,
 but is there any way to know if a fill was
 ever used?
 
-As a matter of fact, there is if we use the 
+As a matter of fact there is, if we use the 
 fit conjunction (!.) which specifies the fill 
 that is used if required.
 _______________________________________
