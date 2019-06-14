@@ -5,12 +5,12 @@ NB.labchapter:Video Requirements
 0 : 0
 _______________________________________
 
-To run this video lab you must have 
+To run this video lab, you must have 
 access to youtube.com through the 
 internet. 
 
 If you do not, the lab will still 
-advance thorugh the exercises, but the 
+advance through the exercises, but the 
 videos will not be displayed.
 
 Videos will appear as steps in the lab,
@@ -91,7 +91,7 @@ $ A1
 NB.Can you predict the result of
 NB.}. A1 and $ }. A1 ?
 
-}. A1   NB. take away the first item 
+}. A1   NB. Take away the first item 
 
 $ }. A1 NB. A list with no items? Shape 0
 
@@ -103,7 +103,7 @@ What about atoms?
 By the way, in the video the shape of
 an atom is shown as a background ring 
 signifying an empty shape compared 
-with a 1 item list which would 
+with a 1 item list, which would 
 have a solid background shape because
 a shape of 1 is not an empty shape.
 _______________________________________
