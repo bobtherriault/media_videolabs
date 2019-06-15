@@ -7,9 +7,11 @@ beheadjhs.ijt
 beheadjqt.ijt
 tailjhs.ijt
 tailjqt.ijt
+curtailjhs.ijt
+curtailjqt.ijt
 videolabjqt.ijs
 )
 
-VERSION=: '1.0.7'
+VERSION=: '1.0.8'
 RELEASE=: 'j901'
 FOLDER=: 'media/videolabs'
