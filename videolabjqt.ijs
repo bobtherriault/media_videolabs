@@ -25,7 +25,7 @@ display=: 3 : 0
 
 NB. === form description
 MULTIMEDIA=: 0 : 0
-pc multimedia ptop;pmove 0 0 _1 _1;
+pc multimedia ptop;pcenter;
 bin h;
 bin vs;
 cc SI static;cn "Size";set _ tooltip "Available Display Sizes";
