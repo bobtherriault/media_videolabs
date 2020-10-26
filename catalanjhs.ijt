@@ -1,4 +1,4 @@
-NB. Lab: Video - Generating the Catalan numbers
+NB. Lab: Video - Generating the Catalan numbers JHS
 NB. 
 NB.labchapter: 0 - Video Requirements
 
@@ -41,6 +41,7 @@ NB.labhtml:<iframe width="800" height="450" src="https://www.youtube.com/embed/5
 NB.labprepare:set up Jqt display and define test and test 3
 
 coinsert 'Cat' NB. Put Cat locale into copath of current locale
+coerase <'Cat'
 
 tester_Cat_=: 4 : 0  NB. Basis of catalan tester for string y of length 2 x
 if. 2~:3!:0 y do.(LF,(":y),' is not a character string.',LF,'Try entering: test',(":x),' ''',(":y),'''',LF)return. end.
@@ -84,8 +85,6 @@ _______________________________________
 
 NB.labchapter: 3 - What can Catalan strings represent?
 
-NB.labhtml:<iframe width="800" height="450" src="https://www.youtube.com/embed/IJkyzPHRiGY?feature=oembed;rel=0&amp;"></iframe>
-
 NB.labprepare: define display environment and displays
 
 
@@ -94,7 +93,6 @@ r1_Cat_=:((-:@:# = +/)"_1 # ]) NB. removes those combinations where number of 1'
 r2_Cat_=: ((_1&<:@: (<./)@:(+/\)@:(+ (_1 * -.))"_1) # ]) NB. removes those combinations where number of 0's > number of preceding 1's- Rule 2
 cat_Cat_=: a:&$: : (<@: ({ ($~)`(1 0"_)`((1 , 0 ,~ ])"1 @: r2 @: r1 @: cmb)@.(2&<.))"0) NB. Handles 0 and 1 cases and trims others with the beginning 1 column and ending 0 column
 
-NB. Verbs for lesson 4
 parenthesis_Cat_=: 3 : 0
 (i. catalan y) parenthesis y 
 :
@@ -121,20 +119,15 @@ if. y=1 do. jhtml_jhs_ '<span style="font-weight:bold;letter-spacing:5px;font-si
 ct_Cat_=:(+ (_1 * -.)) @>@cat
 exf_Cat_=:i.@(#"1)@ct
 wyf_Cat_=: ( (+/\"1 )@ct - >@cat)
-frmt_Cat_=:,@:(];;@:(('<tspan class="','">',~[);'</tspan>';~]))
 
 mount_Cat_=: 3 : 0
 (i. catalan y) mount y
 :
-9!:7 '+++++++++|-' [ bx=. 9!: 6 ''
-if. y=0 do. jhtml_jhs_"1 r rplc"1 ('black' frmt '|-+')[ r=.>< ;. _2 (9!:36 '') 5!:30 a: return. end.
-if. y=1 do. jhtml_jhs_"1 r rplc"1 ('black' frmt '|-+'),('blue' frmt '/\'),('white' frmt ' ') [ r=.>< ;. _2 (9!:36 '') 5!:30<'/\' return. end.
+if. y=0 do. <' . Empty' return. end.
+if. y=1 do. <'/\' return. end.
 t=.(' ' $~ catalan , ] , +:) y NB.(0,x) (' ' <@$~ (([: >./"1 >:@wyf) ,"0 +:@:] ))y
-t=. (x (<. <:@:catalan) y){ <"_1 ('\/'{~ a: cat y)((a:([:<"1(i.@:catalan@],."0 _1 wyf_Cat_,"0 exf_Cat_))y))}"_ t
-t=._6 ]\ |. each t
-t=.>< ;. _2 (9!:36 '') 5!:30  t
-9!:7 bx 
-jhtml_jhs_"1 t rplc"1 ('black' frmt '|-+'),('blue' frmt '/\'),('white' frmt ' ')
+t=. (x (<. <:@:catalan) y){ <"_1 ('\/'{~ > a: cat y)((a:([:<"1(i.@:catalan@],."0 _1 wyf_Cat_,"0 exf_Cat_))y))}"_ t
+_6 ]\ |. each t
 )
 
 multiply_Cat_=: 3 : 0
@@ -149,6 +142,7 @@ jhtml_jhs_"1 t
 )
 
 mult_Cat_=: 3 : 0
+p=.y
 while. 1<# p do.
  for_t. p do. if. t=<')' do. p=. t_index (((-&2)@:[ {. ]) , <@:(')',~'(',;@:(_2&+@[}.{.))   , (>:@:[ }. ])) p break.end. end.
 end.
@@ -167,16 +161,16 @@ if. y=1 do. t=. '<svg height="14" width="14"><rect x="2" y="2" width="10" height
             jhtml_jhs_ t,'<path stroke="forestgreen" stroke-width="3" fill="none" d="M 1,13 v -11 h 11" /></svg>' return. end.
 w=.('<svg height="',":@: ( (12 * >:)* >.@:((#x)<.8 %~ catalan)),'" width="',":@:(125 * <.&8),'">'"_)y NB. outside svg wrapper 8 grids per row
 pos_base_=:pos=.(i. # x (<. <:@:catalan) y){ >@:({. ,@:{@:(1.2&*@:i.@:>.@:%&8 ; 1.2&*@:i.@:<.&8))@:catalan  y NB. upper left positions of grids
-jhtml_jhs_"1 (w , ,&'</svg>') , pos paths (x (<. <:@:catalan) y) cat y
+jhtml_jhs_"1 (w , ,&'</svg>') , pos paths >(x (<. <:@:catalan) y) cat y
 )
-paths_Cat_=: 4 : 0"1 NB. aux to build grids N1 AUX N2 - N1 is x1 y1 - N2 is size of grid in rows=columns
+paths_Cat_=: 4 : 0"1 NB. to build grids and place paths and diagonal on them
 'h w'=.x
 n=. -: # y
-t=.('<line x1="',":@:(xpos + (wid =. _10 + (10 * >:) ) ),'" y1="',(": ypos),'" x2="',":@:(xpos=.10 + 10 * *&w),'" y2="',":@:((ht=. _10 + (10 * >:))  + (ypos=.  10 * (h * >:) )),'" stroke="red" stroke-width="1.5" />'"_) n
-t=. t,('<rect x="',(":xpos),'" y="',(":ypos),'" width="',(":wid),'" height="',(":ht),'" stroke="grey" fill="none" />'"_) n
-t=. t,,('<line x1="',"1 (": xpos) ,"1 '" y1="',"1(": ypos + 10 * ,.@:i.),"1 '" x2="' ,"1 (": wid+xpos),"1 '" y2="',"1 (": ypos + 10 * ,.@:i.),"1'" stroke="gray"/>'"_) n
-t=. t,,('<line x1="',"1 (": xpos + 10 * ,.@:i.) ,"1 '" y1="',"1(": ypos ),"1 '" x2="' ,"1 (": xpos + 10 * ,.@:i.),"1 '" y2="',"1 (": ypos + ht ),"1'" stroke="gray"/>'"_) n
-t,,('<path stroke="forestgreen" stroke-width="4" fill="none" d="M ',":@:(xpos@:-:@:#),',', ":@:((ht + ypos) & -:@:#),((' h 10';' v -10');@:{~ ]),'" />'"_) y
+t=.'<line x1="',(": xpos + (wid =. _10 + 10 * >: n ) ),'" y1="',(": ypos),'" x2="',(": xpos=.10 + 10 * w * n),'" y2="',(": 2 + (ht=. _10 + 10 * >: n) + (ypos=. 10 * h * >: n )),'" stroke="red" stroke-width="1.5" />'
+t=. t, '<rect x="',(": xpos),'" y="',(":ypos),'" width="',(":wid),'" height="',(":ht),'" stroke="grey" fill="none" />'
+t=. t,'<line x1="',(":xpos),'" y1="',(":ypos + -:ht),'" x2="',(":xpos +  wid),'" y2="',(":ypos + -:ht),'" stroke-width="',(": wid),'" stroke-dasharray="1 9" stroke="gray"/>'
+t=. t,'<line x1="',(":xpos + -: wid),'" y1="',(": ypos),'" x2="',(":xpos + -: wid),'" y2="',(":ht + ypos),'" stroke-width="',(":  wid),'" stroke-dasharray="1 9" stroke="gray"/>'
+t,'<path stroke="forestgreen" stroke-width="4" fill="none" d="M ',(": xpos),',',((":2 +ht+ypos)),((' h 10';' v -10');@:{~y),'" />'
 )
 
 
@@ -190,7 +184,7 @@ if. y=1 do. t=. '<svg height="48" width="50"><line x1="39.142" y1="39.142" x2="5
             jhtml_jhs_ t,'<line x1="39.142" y1="39.142" x2="30.176" y2="5.681" stroke="red" /></svg>' return. end.
 pos_base_=:pos=.(i. # x (<. <:@:catalan) t){ >@:({. ,@:{@:(1.2&*@:i.@:>.@:%&10 ; 1.2&*@:i.@:<.&10))@:catalan  t NB. upper left positions of grids
 vert_base_=:vertices=.(25 +|. pos* 40) (+"1"1 _) 20+.@:r.((o.%4)+ 2&% * o.@:i.)t+2
-ed=. ,/ poly (1,. cat t) # inv"_1  (;"1) 2[\"1 <"1 vertices
+ed=. ,/ poly (1,. > cat t) # inv"_1  (;"1) 2[\"1 <"1 vertices
 w_base_=:w=.('<svg height="',":@: ( 48 * >.@:((#x)<.10 %~ catalan)),'" width="',":@:(125 * <.&10),'">'"_)t NB. outside svg wrapper 8 grids per row
 jhtml_jhs_ (w , ,&'</svg>') , sv_base_=: ; ": each (<'<line x1="'),.(<"0 [ 1{"1 ed),. (<'" y1="'),.(<"0 {."1 ed),.(<'" x2="'),. (<"0 {:"1 ed),.(<'" y2="'),. ( _2{"1 ed);"0(<'" stroke-width="1" stroke="red" />')
 )
@@ -216,6 +210,8 @@ p=. ple +: y NB. the list of primes less than 2 * n
 )
 
 NB.labprepare:
+
+NB.labhtml:<iframe width="800" height="450" src="https://www.youtube.com/embed/IJkyzPHRiGY?feature=oembed;rel=0&amp;"></iframe>
 
 0 : 0
 _______________________________________
@@ -346,7 +342,7 @@ _______________________________________
 )
 NB.labchapter: 10 - Using Prime Factors to simplify calculations
 
-NB.labhtml:<iframe width="800" height="450" src="https://www.youtube.com/embed/oS6SL65NZFs?feature=oembed;rel=0&amp;"></iframe>
+NB.labhtml:<iframe width="800" height="450" src="https://www.youtube.com/embed/W9gZlLunGA8?feature=oembed;rel=0&amp;"></iframe>
 
 0 : 0
 _______________________________________
