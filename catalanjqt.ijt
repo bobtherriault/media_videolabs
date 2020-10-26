@@ -1,6 +1,6 @@
 NB. Lab: Video - Generating the Catalan numbers
 NB. 
-NB.labchapter: 0 - Video Requirements
+NB.labchapter:Video Requirements
 
 0 : 0
 _______________________________________
@@ -35,7 +35,7 @@ the verb name. eg. catalan_Cat_
 _______________________________________
 )
 
-NB.labchapter: 1 - Catalan numbers
+NB.labchapter:Catalan numbers
 NB.labprepare:set up Jqt display and define test and test 3
 require jpath '~addons/media/videolabs/videolabjqt.ijs'
 init_qtvideo_ ''  NB. initialize according to screensize
@@ -68,7 +68,7 @@ test3 '101010'
 _______________________________________
 )
 
-NB.labchapter: 2 - Other ways of finding Catalan strings
+NB.labchapter:Other ways of finding Catalan strings
 NB.labprepare: display and define test4
 display_qtvideo_ 'm5K1zWbyQCQ'
 
@@ -85,7 +85,7 @@ test4 '10101010'
 _______________________________________
 )
 
-NB.labchapter: 3 - What can Catalan strings represent?
+NB.labchapter:What can Catalan strings represent?
 
 NB.labprepare: display and define test4
 display_qtvideo_ 'IJkyzPHRiGY'
@@ -124,8 +124,8 @@ wd 'pshow'
 )
 
 enhanced_close_Cat_=: 3 : 0
-handle=. ": wd 'qhwndp;' 
-wd 'psel ',handle,';'
+NB.handle=. ": wd 'qhwndp;' 
+NB.wd 'psel ',handle,';'
 wd 'pclose;'
 )
 
@@ -139,7 +139,6 @@ r1_Cat_=:((-:@:# = +/)"_1 # ]) NB. removes those combinations where number of 1'
 r2_Cat_=: ((_1&<:@: (<./)@:(+/\)@:(+ (_1 * -.))"_1) # ]) NB. removes those combinations where number of 0's > number of preceding 1's- Rule 2
 cat_Cat_=: a:&$: : (<@: ({ ($~)`(1 0"_)`((1 , 0 ,~ ])"1 @: r2 @: r1 @: cmb)@.(2&<.))"0) NB. Handles 0 and 1 cases and trims others with the beginning 1 column and ending 0 column
 
-NB. Verbs for lesson 4
 parenthesis_Cat_=: 3 : 0
 (i. catalan y) parenthesis y
 :
@@ -279,7 +278,7 @@ although some can go higher.
 _______________________________________
 )
 
-NB.labchapter: 4 - How long would it take if we counted strings?
+NB.labchapter:How long would it take if we counted strings?
 
 NB.labprepare: display and define firstcat
 display_qtvideo_ 'jtfl7Z7gX5M'
@@ -303,7 +302,7 @@ depending on how long you want to wait.
 _______________________________________
 )
 
-NB.labchapter: 5 - Explaining the numerator of the Catalan formula
+NB.labchapter:Explaining the numerator of the Catalan formula
 
 NB.labprepare: display and define explode
 display_qtvideo_ 'CiOeRVN_bZk'
@@ -324,7 +323,7 @@ _______________________________________
 )
 
 
-NB.labchapter: 6 - Explaining the denominator of the Catalan formula
+NB.labchapter:Explaining the denominator of the Catalan formula
 
 NB.labprepare: display and define kitty
 display_qtvideo_ 'WlTImA01gHM'
@@ -344,7 +343,7 @@ kitty 11
 _______________________________________
 )
 
-NB.labchapter: 7 - Extending the accuracy of our Catalan formula
+NB.labchapter:Extending the accuracy of our Catalan formula
 
 NB.labprepare: display and define kitty
 display_qtvideo_ 'vmEAy9beo6U'
@@ -362,7 +361,7 @@ __________________________
 
 (kittyX ; kitty) 45
 
-NB.labchapter: 8 - Logarithms - one of our secret weapons
+NB.labchapter:Logarithms, one of our secret weapons
 
 NB.labprepare: display
 display_qtvideo_ 'yWKG-whuQMU'
@@ -378,7 +377,7 @@ you access them directly from their symbols.
 ______________________________________
 )
 
-NB.labchapter: 9 - Finding the Prime Factors of a number
+NB.labchapter:Finding the Prime Factors of a number
 
 NB.labprepare: display
 display_qtvideo_ 'oS6SL65NZFs'
@@ -395,7 +394,7 @@ q: 45
 _______________________________________
 )
 
-NB.labchapter: 10 - Using Prime Factors to simplify calculations
+NB.labchapter:Using Prime Factors to simplify calculations
 
 NB.labprepare: display
 display_qtvideo_ 'W9gZlLunGA8'
@@ -413,7 +412,7 @@ subtracting logarithms.
 _______________________________________
 )
 
-NB.labchapter: 11 - Finding the primes less than a given integer
+NB.labchapter:Finding the primes less than a given integer
 
 NB.labprepare: display and define ple
 display_qtvideo_ 'MNDnVp-AplA'
@@ -432,7 +431,7 @@ ple 45
 _______________________________________
 )
 
-NB.labchapter: 12 - Finding the exponents of the primes in the factorial of a given integer
+NB.labchapter:Finding the exponents of the primes in the factorial of a given integer
 
 NB.labprepare: display and define pexp
 display_qtvideo_ 'bBlINpzzUCA'
@@ -453,7 +452,7 @@ _______________________________________
 )
 
 
-NB.labchapter: 13 - Finding the millionth Catalan number
+NB.labchapter:Finding the millionth Catalan number
 
 NB.labprepare: display and define catalan and kittyN
 display_qtvideo_ 'ez2OkKU6MxY'
@@ -493,7 +492,7 @@ kittyN 1000000
 
 _______________________________________
 )
-NB.labchapter: 14 - References
+NB.labchapter:References
 
 0 : 0
 _______________________________________
