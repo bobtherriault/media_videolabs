@@ -16,6 +16,6 @@ catalanjhs.ijt
 videolabjqt.ijs
 )
 
-VERSION=: '1.0.9'
+VERSION=: '1.0.10'
 RELEASE=: 'j901'
 FOLDER=: 'media/videolabs'
