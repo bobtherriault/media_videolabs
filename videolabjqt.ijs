@@ -1,12 +1,12 @@
 NB. multimedia lab viewer - video processes (even when closed) remain until jqt has exited. 
 coclass 'qtvideo'
 
-NB. === initializing verb must be run at the beginning of each video lab
+NB. === initializing verb must be run at the beginning of each video lab with argument of '' or when resizing window with arguemnt of window size 0, 1, or 2
 init =: 3 : 0
-if. 0 -: 4!:0 <'QThandle_qtvideo_' do. erase 'QThandle_qtvideo_' [ wd 'psel ',QThandle,';pclose;' end. NB. close window if it exists - cleans up orphan ghost windows 
-'WM HM'=: _300 + 2 3 { ". wd 'qscreen' NB. establish screen width and height with 300 px allowance    
+if. 0 -: 4!:0 <'QThandle_qtvideo_' do. erase 'QThandle_qtvideo_' [ wd 'psel ',QThandle_qtvideo_,';pclose;' end. NB. close window if it exists - cleans up orphan ghost windows 
+WM =: _300 + 2 { ". wd 'qscreen' NB. establish screen width with 300 px allowance    
 'SS MS LS'=:  ": each VM=: WM>400 800 1600
-if.y-:'' do.VM=:<: 2<.+/VM else. VM=:y end. NB. sets viewmode to default or smaller if argument is '' or to size if called from size buttons
+if.y-:'' do.VM=:". MS else. VM=:y end. NB. sets viewmode to default or smaller if argument is '' or to size if called from size buttons
 'WM HM'=:>VM {400 225;800 450;1600 900 NB. set medium size as default
  wd MULTIMEDIA NB. opens new video form at the beginning of lab or when size changes
  QThandle=: wd 'qhwndp'  NB. Establishes identifier for the video window
@@ -20,10 +20,17 @@ i. 0 0
 NB. === verb used to show video if new or resized - y argument is code for video
 display=: 3 : 0
  VIDEO=:y  NB. used in reset to rerun display
+  if. -. L. VIDEO do. VIDEO=:<y end.
+  select. # VIDEO 
+    case. 1 do. VIDEO =: (> VIDEO),'?'
+    case. 2 do. VIDEO =: (> {. VIDEO),'?start=',(": > {: VIDEO),'&'
+    case.   do. VIDEO =: (> {. VIDEO),'?start=',(": > 1 { VIDEO),'&end=',(": > {: VIDEO),'&'
+  end.
   wd 'psel ',QThandle,';'
-  wd 'set mm html <iframe width="',(":WM) ,'" height="',(":HM) ,'" src="https://www.youtube.com/embed/',VIDEO,'?feature=oembed;rel=0&amp;"></iframe> ;set mm visible;set mm minwh ',(":WM , HM),' ;'
+  wd 'set mm html <iframe width="',(":WM) ,'" height="',(":HM) ,'" src="https://www.youtube.com/embed/',VIDEO,'feature=oembed;rel=0&amp;"></iframe> ;set mm visible;set mm minwh ',(":WM , HM),' ;'
  wd 'pshow;'
 )
+
 
 NB. === form description
 MULTIMEDIA=: 0 : 0
