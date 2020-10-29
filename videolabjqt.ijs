@@ -59,3 +59,14 @@ if. wdisparent 'multimedia' do.
                          wd 'pshow hide;'
                                end. NB. Select video form,  hide so there is not a new ghost window 
 )
+
+displayJHS=: 3 : 0 NB. Creates string for video to be inserted in position for JHS ide
+ VIDEO=:y  NB. used in reset to rerun display
+  if. -. L. VIDEO do. VIDEO=:<y end.
+  select. # VIDEO 
+    case. 1 do. VIDEO =: (> VIDEO),'?'
+    case. 2 do. VIDEO =: (> {. VIDEO),'?start=',(": > {: VIDEO),'&'
+    case.   do. VIDEO =: (> {. VIDEO),'?start=',(": > 1 { VIDEO),'&end=',(": > {: VIDEO),'&'
+  end.
+'NB.labhtml:<iframe width="800" height="450" src="https://www.youtube.com/embed/',VIDEO,'feature=oembed;rel=0&amp;"></iframe>'
+)
