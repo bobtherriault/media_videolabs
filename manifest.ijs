@@ -1,4 +1,4 @@
-CAPTION=: 'Video labs for jqt and jhs'
+CAPTION=: 'Video labs for jqt,jhs and console'
 
 FILES=: 0 : 0
 headjhs.ijt
@@ -12,6 +12,11 @@ curtailjqt.ijt
 tallyjhs.ijt
 tallyjqt.ijt
 catalan.ijt
+catauxcon.ijs
+catauxjhs.ijs
+catauxjqt.ijs
+videolabcon.ijs
+videolabjhs.ijs
 videolabjqt.ijs
 )
 
