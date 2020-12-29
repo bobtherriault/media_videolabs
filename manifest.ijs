@@ -11,8 +11,7 @@ curtailjhs.ijt
 curtailjqt.ijt
 tallyjhs.ijt
 tallyjqt.ijt
-catalanjqt.ijt
-catalanjhs.ijt
+catalan.ijt
 videolabjqt.ijs
 )
 
