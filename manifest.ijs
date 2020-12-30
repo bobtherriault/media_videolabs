@@ -1,16 +1,11 @@
 CAPTION=: 'Video labs for jqt,jhs and console'
 
 FILES=: 0 : 0
-headjhs.ijt
-headjqt.ijt
-beheadjhs.ijt
-beheadjqt.ijt
-tailjhs.ijt
-tailjqt.ijt
-curtailjhs.ijt
-curtailjqt.ijt
-tallyjhs.ijt
-tallyjqt.ijt
+head.ijt
+behead.ijt
+tail.ijt
+curtail.ijt
+tally.ijt
 catalan.ijt
 catauxcon.ijs
 catauxjhs.ijs
