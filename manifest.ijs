@@ -15,6 +15,6 @@ videolabjhs.ijs
 videolabjqt.ijs
 )
 
-VERSION=: '1.0.12'
+VERSION=: '1.0.13'
 RELEASE=: 'j901'
 FOLDER=: 'media/videolabs'
